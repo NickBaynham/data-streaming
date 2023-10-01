@@ -10,12 +10,12 @@ Usage of the Kafka Data Streaming Platform
 ## Starting the Zookeeper Server
 ```bash
 export KAFKA_HOME=<path to Kafka folder>
-zookeeper-server-start $KAFKA_HOME/config/zookeeper.properties
+zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
 ```
 
 ## Starting the Kafka Server
 ```bash
-kafka-server-start $KAFKA_HOME/config/server.properties
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
 ```
 
 ### Creating a topic
@@ -65,7 +65,10 @@ Remember to add the kafka bin directory to your path so that you can run the CLI
 You will always use option --bootstrap-server and never use the --zookeeper command in options.
 
 ### Create Topic
-
+```bash
+$TOPIC = "Test"
+kafka-topics.sh --bootstrap-server localhost:9092 --create --topic $TOPIC
+```
 ### List Topics
 ### Describe Topic
 ### Increase Topic Partitions
